@@ -274,7 +274,7 @@ with graph.as_default():
 		test_model = CnnMnistModel(input_holder, target_holder, False, 1)
 
 
-epochs = 1
+epochs = 10
 batch_size = 64
 num_steps = int(n_tr/batch_size)
 print('n_tr =', n_tr, 'num_steps =', num_steps)
@@ -312,6 +312,8 @@ with tf.Session(graph=graph) as sess:
 		#cp = sess.run(train_model.correct_num, feed_dict=feed_dict)
 		#print(cp)
 		count += np.sum(cp)
-	print("Testing Accuracy：", count/n_ts)	# 0.9782
+	print("Testing Accuracy：", count/n_ts)	
+	# 0.9782	- one epoch
+	# 0.9921	- ten epoch
 
 					

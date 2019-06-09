@@ -39,7 +39,6 @@ def define_scope(function, scope=None, *args, **kwargs):
 	A decorator for functions that define TensorFlow operations. The wrapped
 	function will only be executed once. Subsequent calls to it will directly
 	return the result so that operations are added to the graph only once.
-
 	The operations added by the function live within a tf.variable_scope(). If
 	this decorator is used with arguments, they will be forwarded to the
 	variable scope. The scope name defaults to the name of the wrapped
@@ -317,5 +316,3 @@ with tf.Session(graph=graph) as sess:
 	print("Testing Accuracy：", count/n_ts)	
 	# 0.9223	- one epoch
 	# 0.8965	- ten epochs
-
-					
